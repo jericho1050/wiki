@@ -1,0 +1,25 @@
+{% extends "encyclopedia/layout.html" %}
+
+{% block title %}
+    Edit
+{% endblock %}
+
+{% block body %}
+    <h2 style="text-align: center;">Edit Encyclopedia Entry</h2>
+    <br>
+
+    <form class="d-flex flex-column align-items-center align-items-xl-center" action="{% url 'edit' title=title %}" method="post">
+        {% csrf_token %}
+        <div class="form-row">
+            <h3 class="col">Title:</h3>
+            <h3 class="col">{{ title }}</h3>
+        </div>
+        <div class="form-row align-self-start">
+            <div class="col offset-9"><label class="col-form-label" for="content">Content:</label></div>
+        </div><textarea id="content" name="content">{{ markdown_content }}</textarea>
+        <div class="col offset-2"><button class="btn btn-primary" type="submit" style="width: 120.1719px;margin-top: 14px;">Submit</button></div>
+    </form>
+
+{% endblock %}
+
+

@@ -1,0 +1,12 @@
+{% extends "encyclopedia/layout.html" %}
+
+{% block title %}
+    {{ title }}
+{% endblock %}
+
+{% block body %}
+{{ html_content |safe}}
+<a href="{% url 'edit' title=title %}">
+<i class="img-fluid far fa-edit d-inline float-right" style="font-size: 45px;margin-top: -85px;margin-bottom: -85px;margin-left: 20px;margin-right: 20px;"></i>
+</a>
+{% endblock %}
